@@ -1,0 +1,139 @@
+:root {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+  color: #0f172a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #f9fafc 0%, #dfe8ff 45%, #cfd9ff 65%)
+      fixed,
+    linear-gradient(135deg, #161a2d, #0f172a) fixed;
+  background-blend-mode: screen;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.crypto-form {
+  width: min(420px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(18px);
+  position: relative;
+}
+
+.refetching-indicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  z-index: 10;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.crypto-form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.crypto-form label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.crypto-form select,
+.crypto-form input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  background: rgba(241, 245, 249, 0.8);
+  color: #0f172a;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.crypto-form select:focus,
+.crypto-form input[type="number"]:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.crypto-form button[type="submit"] {
+  margin-top: 8px;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #0d0f1a, #111c44);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease,
+    background 0.3s ease;
+  box-shadow: 0 15px 30px rgba(17, 28, 68, 0.35);
+}
+
+.crypto-form button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 40px rgba(17, 28, 68, 0.45);
+  background: linear-gradient(135deg, #0a0c18, #182654);
+}
+
+.crypto-form button[type="submit"]:active {
+  transform: translateY(1px);
+  box-shadow: 0 12px 24px rgba(17, 28, 68, 0.35);
+}
+
+.crypto-form p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #e11d48;
+  font-weight: 500;
+}

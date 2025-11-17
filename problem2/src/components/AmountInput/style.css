@@ -1,0 +1,28 @@
+.amount-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #0f172a;
+  padding: 0;
+  width: 100%;
+  font-family: inherit;
+}
+
+.amount-input::placeholder {
+  color: #cbd5e1;
+}
+
+.amount-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Remove spinner arrows */
+.amount-input::-webkit-outer-spin-button,
+.amount-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
